@@ -23,6 +23,9 @@ function App() {
   const [electronics,setElectronics] = useState(null);
   const [clothings,setClothings] = useState(null);
   const [toys,setToys] = useState(null);
+
+  const [currentItem, setCurrentItem] = useState(null);
+  const [toggle, setToggle] = useState(false);
   
   const loadBlockchainData = async () => {
 
@@ -64,7 +67,9 @@ function App() {
   }
 
   const togglePop = (item) => {
-    console.log(item);
+    setCurrentItem(item)
+    toggle ? setToggle(false) : setToggle(true);
+    // console.log(item);
   }
 
   useEffect(() => {
@@ -89,6 +94,12 @@ function App() {
           </>
         )
 
+      }
+
+      {
+        toggle && (
+          <Product item={currentItem} provider={provider} account={account} dappazon={dappazonContract} togglePop={togglePop}  />
+        )
       }
 
     </div>
