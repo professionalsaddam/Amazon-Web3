@@ -2,5 +2,9 @@
 pragma solidity ^0.8.9;
 
 contract Dappazon {
-    string public name = "Dappazon";
+    string public name ;
+
+    constructor() {
+        name = "Dappazon"; 
+    }
 }
