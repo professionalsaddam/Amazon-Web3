@@ -10,6 +10,8 @@ const Navigation = ({ account, setAccount }) => {
         setAccount(account)
     }
 
+    
+
     return (
         <nav>
             {/* BRAND */}
@@ -42,6 +44,7 @@ const Navigation = ({ account, setAccount }) => {
                 <li><a href='#Toys & Gaming'>Toys & Gaming</a></li>
 
             </ul>
+
 
 
 
