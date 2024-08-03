@@ -10,6 +10,11 @@ contract Dappazon {
         owner = msg.sender;
     }
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can access this");
+        _;
+    }
+
     struct Item{
         uint256 id;
         string name;
@@ -36,7 +41,7 @@ contract Dappazon {
         uint256 _rating,
         uint256 _stocks
     )
-    public
+    public onlyOwner
     {
 
         //Create Item Struct
